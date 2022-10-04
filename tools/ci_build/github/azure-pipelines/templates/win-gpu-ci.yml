@@ -76,11 +76,6 @@ jobs:
       versionSpec: '16.x'
       force32bit: ${{ parameters.isX86 }}
 
-  - script: |
-     nvidia-smi.exe -g 00000001:00:00.0 -dm 0
-     nvidia-smi
-    displayName: 'nvidia-smi'
-
   # Our build machine doesn't have java x86
   - ${{ if eq(parameters.buildArch, 'x64') }}:
       - task: JavaToolInstaller@0
