@@ -27,7 +27,7 @@ target_compile_options(ort_opschema_lib PRIVATE -D_OPSCHEMA_LIB_=1)
 if(NOT MSVC)
   target_compile_options(ort_opschema_lib PRIVATE "-Wno-parentheses")
 endif()
-set (OPSCHEMA_LIB_DEPENDENCIES onnx onnx_proto ${PROTOBUF_LIB} flatbuffers safeint_interface Boost::mp11)
+set (OPSCHEMA_LIB_DEPENDENCIES onnx onnx_proto ${PROTOBUF_LIB} flatbuffers safeint_interface Boost::mp11 safeint_interface)
 
 # ${CMAKE_CURRENT_BINARY_DIR} is so that #include "onnxruntime_config.h" is found
 target_include_directories(ort_opschema_lib PRIVATE ${ONNXRUNTIME_ROOT} ${ORTTRAINING_ROOT} ${CMAKE_CURRENT_BINARY_DIR})
