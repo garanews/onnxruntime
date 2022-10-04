@@ -1074,13 +1074,13 @@ set(CMAKE_CXX_FLAGS_MINSIZEREL "${CMAKE_CXX_FLAGS_MINSIZEREL} -DGSL_UNENFORCED_O
 
 include(eigen)
 include(wil.cmake)    
-    FetchContent_Declare(
-      safeint
-      URL https://github.com/dcleblanc/SafeInt/archive/ff15c6ada150a5018c5ef2172401cb4529eac9c0.zip      
-    )
-    FetchContent_MakeAvailable(safeint)
-    add_library(safeint_interface INTERFACE)
-    target_include_directories(safeint_interface INTERFACE ${safeint_SOURCE_DIR})
+FetchContent_Declare(
+    safeint
+    URL https://github.com/dcleblanc/SafeInt/archive/ff15c6ada150a5018c5ef2172401cb4529eac9c0.zip      
+)
+FetchContent_MakeAvailable(safeint)
+add_library(safeint_interface INTERFACE)
+target_include_directories(safeint_interface INTERFACE ${safeint_SOURCE_DIR})
 # External dependencies end.
 
 #onnxruntime_EXTERNAL_LIBRARIES could contain onnx, onnx_proto,libprotobuf, cuda/cudnn,
