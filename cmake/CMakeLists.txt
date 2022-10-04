@@ -739,7 +739,7 @@ if (onnxruntime_BUILD_UNIT_TESTS)
       googletest
       URL https://github.com/google/googletest/archive/refs/tags/release-1.12.1.zip      
     )
-    FetchContent_MakeAvailable(googletest)
+    FetchContent_MakeAvailable(googletest EXCLUDE_FROM_ALL)
     
     set_target_properties(gmock PROPERTIES FOLDER "External/GTest")
     if (NOT MSVC)
@@ -793,7 +793,7 @@ if (onnxruntime_BUILD_BENCHMARKS)
         google_benchmark
         URL https://github.com/google/benchmark/archive/refs/tags/v1.7.0.zip
       )
-      FetchContent_MakeAvailable(google_benchmark)
+      FetchContent_MakeAvailable(google_benchmark EXCLUDE_FROM_ALL)
    
     #add_library(benchmark::benchmark ALIAS benchmark)
   endif()
@@ -810,7 +810,7 @@ if (NOT WIN32)
         google_nsync
         URL https://github.com/google/nsync/archive/refs/tags/1.25.0.zip        
       )
-      FetchContent_MakeAvailable(google_nsync)
+      FetchContent_MakeAvailable(google_nsync EXCLUDE_FROM_ALL)
 	  set(nsync_SOURCE_DIR ${google_nsync_SOURCE_DIR})   
   endif()
 endif()
@@ -855,7 +855,7 @@ else()
       URL https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.18.3.zip      
       SOURCE_SUBDIR  cmake
     )
-    FetchContent_MakeAvailable(protobuf)
+    FetchContent_MakeAvailable(protobuf EXCLUDE_FROM_ALL)
  
   if (TARGET libprotoc)
     set_target_properties(libprotoc PROPERTIES FOLDER "External/Protobuf")
@@ -927,7 +927,7 @@ else()
 		  date
 		  URL https://github.com/HowardHinnant/date/archive/refs/tags/v2.4.1.zip		  
 		)
-		FetchContent_MakeAvailable(date)
+		FetchContent_MakeAvailable(date EXCLUDE_FROM_ALL)
  
 endif()
 
@@ -945,7 +945,7 @@ else()
       mp11
       URL https://github.com/boostorg/mp11/archive/refs/tags/boost-1.79.0.zip      
     )
-    FetchContent_MakeAvailable(mp11)  
+    FetchContent_MakeAvailable(mp11 EXCLUDE_FROM_ALL)  
 endif()
 
 if (onnxruntime_PREFER_SYSTEM_LIB)
@@ -963,7 +963,7 @@ else()
       json
       URL https://github.com/nlohmann/json/archive/refs/tags/v3.10.5.zip      
     )
-    FetchContent_MakeAvailable(json)
+    FetchContent_MakeAvailable(json EXCLUDE_FROM_ALL)
   
 endif()
 
@@ -979,7 +979,7 @@ else()
       re2
       URL https://github.com/google/re2/archive/refs/tags/2022-06-01.zip     
     )
-    FetchContent_MakeAvailable(re2)
+    FetchContent_MakeAvailable(re2 EXCLUDE_FROM_ALL)
   
   set(RE2_INCLUDE_DIR ${REPO_ROOT}/cmake/external/re2)
 endif()
@@ -1052,7 +1052,7 @@ if (CPUINFO_SUPPORTED)
           pytorch_cpuinfo
           URL https://github.com/pytorch/cpuinfo/archive/5916273f79a21551890fd3d56fc5375a78d1598d.zip
         )
-        FetchContent_MakeAvailable(pytorch_cpuinfo)
+        FetchContent_MakeAvailable(pytorch_cpuinfo EXCLUDE_FROM_ALL)
     
   endif()
 endif()
@@ -1078,7 +1078,7 @@ FetchContent_Declare(
     safeint
     URL https://github.com/dcleblanc/SafeInt/archive/ff15c6ada150a5018c5ef2172401cb4529eac9c0.zip      
 )
-FetchContent_MakeAvailable(safeint)
+FetchContent_MakeAvailable(safeint EXCLUDE_FROM_ALL)
 add_library(safeint_interface INTERFACE)
 target_include_directories(safeint_interface INTERFACE ${safeint_SOURCE_DIR})
 # External dependencies end.
@@ -1634,7 +1634,7 @@ if (NOT onnxruntime_MINIMAL_BUILD)
       onnx
       URL https://github.com/onnx/onnx/archive/5a5f8a5935762397aa68429b5493084ff970f774.zip      
     )
-    FetchContent_MakeAvailable(onnx) 
+    FetchContent_MakeAvailable(onnx EXCLUDE_FROM_ALL) 
 else()
   include(onnx_minimal)
 endif()
@@ -1679,7 +1679,7 @@ else()
       flatbuffers
       URL https://github.com/google/flatbuffers/archive/refs/tags/v1.12.0.zip      
     )
-    FetchContent_MakeAvailable(flatbuffers)  
+    FetchContent_MakeAvailable(flatbuffers EXCLUDE_FROM_ALL)  
   set_msvc_c_cpp_compiler_warning_level(3)
 endif()
 

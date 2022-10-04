@@ -13,19 +13,19 @@ FetchContent_Declare(
 fp16
 URL https://github.com/Maratyszcza/FP16/archive/0a92994d729ff76a58f692d3028ca1b64b145d91.zip
 )
-FetchContent_MakeAvailable(fp16)
+FetchContent_MakeAvailable(fp16 EXCLUDE_FROM_ALL)
 FetchContent_Declare(
 pthreadpool
 URL https://github.com/Maratyszcza/pthreadpool/archive/1787867f6183f056420e532eec640cba25efafea.zip
 )
-FetchContent_MakeAvailable(pthreadpool)
+FetchContent_MakeAvailable(pthreadpool EXCLUDE_FROM_ALL)
 FetchContent_Declare(
 googlexnnpack
 URL https://github.com/google/XNNPACK/archive/003c580e696a774afdc984996ee909b7c8d8128c.zip
 PATCH_COMMAND ${Patch_EXECUTABLE} --binary --ignore-whitespace -p1 < ${PROJECT_SOURCE_DIR}/patches/xnnpack/AddEmscriptenSupport.patch
 )
 
-FetchContent_MakeAvailable(googlexnnpack)
+FetchContent_MakeAvailable(googlexnnpack EXCLUDE_FROM_ALL)
 set(XNNPACK_DIR ${googlexnnpack_SOURCE_DIR})
 
 
